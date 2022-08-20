@@ -1,0 +1,12 @@
+const express= require("express")
+const cors= require("cors")
+const app= express()
+app.use(cors())
+app.use(express.json())
+const Register= require("./controller/Register.controller")
+const Login= require("./controller/Login.controller")
+const user= require("./controller/user.controller")
+app.use("/register", Register)
+app.use("/login", Login)
+app.use("/users",user)
+module.exports = app
